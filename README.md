@@ -1,6 +1,9 @@
-# AngularStoreServiceSample
+# angular-store-service-sample
+Angular で BehaviorSubject を用いたストアサービスのサンプルです
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+## Feature
+- Angular12
+- rxjs
 
 ## Development server
 
