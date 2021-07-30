@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
    */
   private fetch(): Observable<Array<SampleUser>> {
     return this.http
-      .get<Array<SampleUser>>('https://jsonplaceholder.typicode.com/users')
+      .get<SampleUser[]>('https://jsonplaceholder.typicode.com/users')
       .pipe(tap(x => this.service.set = x.filter(u => u.id > Math.floor( Math.random() * 10))));
   }
 
