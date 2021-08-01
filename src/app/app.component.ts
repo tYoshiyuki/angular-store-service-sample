@@ -10,7 +10,7 @@ import { tap } from "rxjs/operators";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public users$: Observable<Array<SampleUser>>;
+  public users$: Observable<SampleUser[]>;
 
   constructor(private http :HttpClient, private service: SampleUserStoreService) {
     this.users$ = service.data$;
@@ -28,10 +28,9 @@ export class AppComponent implements OnInit {
    * データを取得します。
    * @private
    */
-  private fetch(): Observable<Array<SampleUser>> {
+  private fetch(): Observable<SampleUser[]> {
     return this.http
       .get<SampleUser[]>('https://jsonplaceholder.typicode.com/users')
       .pipe(tap(x => this.service.set = x.filter(u => u.id > Math.floor( Math.random() * 10))));
   }
-
 }
